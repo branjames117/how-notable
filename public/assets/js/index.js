@@ -72,7 +72,7 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
-  if (activeNote.id) {
+  if (activeNote && activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
@@ -174,7 +174,7 @@ const renderNoteList = (notes) => {
   };
 
   if (notes.length === 0) {
-    noteListItems.push(createLi('No saved Notes', null, false));
+    noteListItems.push(createLi('No saved Notes', false));
   } else {
     notes.forEach((note) => {
       const li = createLi(note.title);
