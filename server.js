@@ -1,28 +1,21 @@
 const express = require('express');
-const path = require('path');
+const htmlRoutes = require('./routes/htmlRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
+const app = express();
+
+// server middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-// GET home route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
-});
+// set routes
+app.use('/', htmlRoutes);
+app.use('/', apiRoutes);
 
-// GET notes route
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/notes.html'));
-});
-
-// GET invalid routes back to home page
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
-});
-
+// start server listening
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}.`);
 });
