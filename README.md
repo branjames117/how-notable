@@ -22,7 +22,7 @@ Note-taking app built with Node and Express for storing server-side notes in a s
 
 `node server` to start the server. Visit your live server at http://localhost:5000.
 
-The website is currently hosted on Heroku [here](https://stark-waters-97913.herokuapp.com/notes).
+The website is currently hosted on Heroku [here](https://stark-waters-97913.herokuapp.com).
 
 ![Screenshot](./public/assets/img/screenshot.jpg)
 
