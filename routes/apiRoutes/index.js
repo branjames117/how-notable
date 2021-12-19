@@ -1,15 +1,28 @@
 const router = require('express').Router();
 const fs = require('fs');
-const notes = require('../../db/db.json');
-const createNewNote = require('../../lib/notes');
+const path = require('path');
+const { createNewNote, deleteNote } = require('../../lib/notes');
 
 router.get('/notes', (req, res) => {
-  res.json(notes);
+  let notes = fs.readFileSync(path.join(__dirname, '../../db/db.json'));
+  let parsedNotes = JSON.parse(notes);
+  console.log(parsedNotes);
+  res.json(parsedNotes);
 });
 
 router.post('/notes', (req, res) => {
-  const note = createNewNote(req.body, notes);
+  let notes = fs.readFileSync(path.join(__dirname, '../../db/db.json'));
+  let parsedNotes = JSON.parse(notes);
+  const note = createNewNote(req.body, parsedNotes);
   res.json(note);
+});
+
+router.delete('/notes/:id', (req, res) => {
+  let notes = fs.readFileSync(path.join(__dirname, '../../db/db.json'));
+  let parsedNotes = JSON.parse(notes);
+  const id = req.params.id;
+  deleteNote(id, parsedNotes);
+  res.json();
 });
 
 module.exports = router;
