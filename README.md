@@ -1,30 +1,45 @@
-# Note Taker Starter Code
+# How Notable!
 
-## User Story
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-AS A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+## Description
 
-## Acceptance Criteria
+Note-taking app built with Node and Express for storing server-side notes in a simple JSON file. Create new notes, delete notes, and "zoom in" on selected notes by clicking on the note titles in the left-hand pane.
 
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+## Table of Contents
 
-## To-do
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
-- Create HTML routes for notes.html (GET /notes) and index.html (GET \*)
-- Create API routes: GET /api/notes should read db.json and return all saved notes as JSON; POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. Each note should have a UUID (check npm packages).
-- Create DELETE functionality with a DELETE /api/notes/:id route, using query parameters with the id of the note to delete from the db.json file.
-- Deploy application to Heroku.
+## Installation
+
+`git clone <src>`, then `npm i` to install dependencies.
+
+## Usage
+
+`node server` to start the server. Visit your live server at http://localhost:5000.
+
+## License
+
+[The MIT License](https://mit-license.org/)
+
+Copyright © 2021 branjames117
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Contributing
+
+This repository and its contributors follow the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md).
+
+## Questions
+
+This repository was created and is maintained by [branjames117](https://github.com/branjames117).
+
+With any questions email the repository owner at [branjames117@gmail.com](mailto:branjames117@gmail.com).
