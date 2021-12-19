@@ -45,6 +45,11 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
+  }).then((res) => {
+    if (res.ok) {
+      return res;
+    }
+    alert('Error: ' + res.statusText);
   });
 
 const deleteNote = (id) =>
@@ -159,7 +164,6 @@ const renderNoteList = (notes) => {
   };
 
   if (!notes.length) {
-    console.log('No notes');
     noteListItems.push(createLi('No saved Notes', false));
   }
 
